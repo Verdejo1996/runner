@@ -22,6 +22,7 @@ public class Controller_Player : MonoBehaviour
     private void GetInput()
     {
         Jump();
+        DoubleJump();
         Duck();
     }
 
@@ -30,6 +31,17 @@ public class Controller_Player : MonoBehaviour
         if (floored)
         {
             if (Input.GetKeyDown(KeyCode.W))
+            {
+                rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+            }
+        }
+    }
+
+    private void DoubleJump()
+    {
+        if (!floored)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
             }

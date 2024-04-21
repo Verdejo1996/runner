@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    public GameObject pickupEffect;
     private Rigidbody rb;
     public static float powerUpVelocity;
+    public GameObject pickUpEffect;
 
     private void Start()
     {
@@ -28,13 +28,12 @@ public class PowerUp : MonoBehaviour
 
     void PickUp(Collider player)
     {
-        Instantiate(pickupEffect, transform.position, transform.rotation);
+        Instantiate(pickUpEffect, transform.position, transform.rotation);
 
 
-        Controller_Instantiator.respawningTimer = 30f;
+        Controller_Instantiator.respawningTimer = UnityEngine.Random.Range(19, 20); ;
 
-        
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 
     public void OutOfBounds()
@@ -44,4 +43,5 @@ public class PowerUp : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
 }

@@ -6,8 +6,9 @@ public class Controller_PowerUp : MonoBehaviour
 {
     public List<GameObject> powerups;
     public GameObject instantiatePos;
-    public static float respawningTimer;
 
+    public static float respawningTimer = 10f;
+    
 
     void Start()
     {
@@ -33,7 +34,7 @@ public class Controller_PowerUp : MonoBehaviour
         if (respawningTimer <= 0)
         {
             Instantiate(powerups[UnityEngine.Random.Range(0, powerups.Count)], instantiatePos.transform);
-            respawningTimer = UnityEngine.Random.Range(2, 20);
+            respawningTimer = UnityEngine.Random.Range(10, 15); ;
         }
 
     }
