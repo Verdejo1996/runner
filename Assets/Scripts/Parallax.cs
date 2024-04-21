@@ -10,6 +10,7 @@ public class Parallax : MonoBehaviour
     {
         startPos = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
+
     }
 
     void Update()
@@ -19,5 +20,16 @@ public class Parallax : MonoBehaviour
         {
             transform.localPosition = new Vector3(20, transform.localPosition.y, transform.localPosition.z);
         }
+        
+        StopParallax();
+    }
+
+    void StopParallax()
+    {
+        if(Controller_Hud.gameOver == true)
+        {
+            parallaxEffect = 0;
+        }
     }
 }
+

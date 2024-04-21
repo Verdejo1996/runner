@@ -5,12 +5,13 @@ public class Controller_Instantiator : MonoBehaviour
 {
     public List<GameObject> enemies;
     public GameObject instantiatePos;
-    public float respawningTimer;
+    public static float respawningTimer;
     private float time = 0;
+
 
     void Start()
     {
-        Controller_Enemy.enemyVelocity = 2;
+        Controller_Enemy.enemyVelocity = 1;
     }
 
     void Update()
@@ -22,11 +23,12 @@ public class Controller_Instantiator : MonoBehaviour
     private void ChangeVelocity()
     {
         time += Time.deltaTime;
-        Controller_Enemy.enemyVelocity = Mathf.SmoothStep(1f, 15f, time / 45f);
+        Controller_Enemy.enemyVelocity = Mathf.SmoothStep(1f, 20f, time / 40f);
     }
 
     private void SpawnEnemies()
     {
+
         respawningTimer -= Time.deltaTime;
 
         if (respawningTimer <= 0)
@@ -34,5 +36,6 @@ public class Controller_Instantiator : MonoBehaviour
             Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Count)], instantiatePos.transform);
             respawningTimer = UnityEngine.Random.Range(2, 6);
         }
+
     }
 }

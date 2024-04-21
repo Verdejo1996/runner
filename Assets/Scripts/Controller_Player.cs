@@ -3,7 +3,7 @@
 public class Controller_Player : MonoBehaviour
 {
     private Rigidbody rb;
-    public float jumpForce = 10;
+    public static float jumpForce = 10;
     private float initialSize;
     private int i = 0;
     private bool floored;
