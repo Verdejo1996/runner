@@ -18,6 +18,7 @@ public class PowerUp : MonoBehaviour
         OutOfBounds();
     }
 
+    //Metodo en el cual al hacer contacto con el trigger del powerup compara el Tag del jugador y si es correcto llama al metodo PickUp.
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -26,6 +27,7 @@ public class PowerUp : MonoBehaviour
         }
     }
 
+    //Metodo en el cual al hacer contacto con el PowerUp se activa un efecto visual y modifica el tiempo del respawn de los enemigos.
     void PickUp(Collider player)
     {
         Instantiate(pickUpEffect, transform.position, transform.rotation);

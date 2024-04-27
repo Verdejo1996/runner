@@ -37,6 +37,7 @@ public class Controller_Player : MonoBehaviour
         }
     }
 
+    //Metodo que agrega un doble salto cuando estemos en el aire al presionar la tecla espacio.
     private void DoubleJump()
     {
         if (!floored)

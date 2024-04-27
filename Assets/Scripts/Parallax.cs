@@ -24,6 +24,7 @@ public class Parallax : MonoBehaviour
         StopParallax();
     }
 
+    //Metodo en el cual cuando perdemos se modifica el atributo de la velocidad del Parallax en 0 para detenerlo.
     void StopParallax()
     {
         if(Controller_Hud.gameOver == true)
